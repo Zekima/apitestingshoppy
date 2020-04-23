@@ -51,18 +51,14 @@ import Vue from 'vue';
 import VueSuperagent from 'vue-superagent'
 
 
-
 Vue.use(VueSuperagent) 
-
-
-
 
 export default {
   name: 'App',
   mounted: function () {
     this.$http
       .get('https://shoppy.gg/api/v1/products/') 
-      .set({ 'Authorization': 'miRtovzMxnHyGomQGTewS7WIxzaS3csQaTGKSh9vNRIJurFxSO', 'Access-Control-Allow-Origin': 'https://shoppy.gg', 'Access-Control-Allow-Credentials' : true, })
+      .set({ 'Authorization': 'miRtovzMxnHyGomQGTewS7WIxzaS3csQaTGKSh9vNRIJurFxSO', 'Access-Control-Allow-Origin': 'https://shoppy.gg', 'Access-Control-Allow-Methods':'GET, POST'})
       .set('Accept', 'application/json')
       .then(res => console.log(res))
       .catch(err => console.log(err));
