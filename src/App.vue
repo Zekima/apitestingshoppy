@@ -57,9 +57,8 @@ export default {
   name: 'App',
   mounted: function () {
     this.$http
-      .get('https://shoppy.gg/api/v1/products/') 
-      .set({ 'Authorization': 'miRtovzMxnHyGomQGTewS7WIxzaS3csQaTGKSh9vNRIJurFxSO', 'Access-Control-Allow-Origin': 'https://localhost:8080', 'Access-Control-Allow-Methods':'GET, POST'})
-      .set('Accept', 'application/json')
+      .post('https://shoppy.gg/api/v1/products/')
+      .set({ 'Authorization': 'miRtovzMxnHyGomQGTewS7WIxzaS3csQaTGKSh9vNRIJurFxSO', 'Access-Control-Allow-Origin': 'http://shoppy.gg', 'Access-Control-Allow-Methods':'GET, POST'})
       .then(res => console.log(res))
       .catch(err => console.log(err));
 
