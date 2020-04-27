@@ -58,7 +58,7 @@ export default {
   mounted: function () {
     this.$http
       .get('https://shoppy.gg/api/v1/products/')
-      .set({ 'Authorization': 'miRtovzMxnHyGomQGTewS7WIxzaS3csQaTGKSh9vNRIJurFxSO', 'Access-Control-Allow-Origin': 'http://shoppy.gg' })
+      .set({ 'Authorization': 'miRtovzMxnHyGomQGTewS7WIxzaS3csQaTGKSh9vNRIJurFxSO', 'Access-Control-Allow-Origin': 'https://shoppy.gg' })
       .set('Accept', 'application/json')
       .set('user-agent', 'Shoppy')
       .then(res => console.log(res))
