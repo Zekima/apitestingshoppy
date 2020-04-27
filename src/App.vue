@@ -38,6 +38,8 @@
     </v-app-bar>
 
     <v-content>
+
+      <h1>test</h1>
     
     </v-content>
   </v-app>
@@ -57,10 +59,10 @@ export default {
   name: 'App',
   mounted: function () {
     this.$http
-      .get('https://shoppy.gg/api/v1/products/')
+      .options('https://shoppy.gg/api/v1/products/')
       .set({ 'Authorization': 'miRtovzMxnHyGomQGTewS7WIxzaS3csQaTGKSh9vNRIJurFxSO'})
-      .set({'Access-Control-Allow-Origin': '*', useCredentails: true})
-      .set('Accept', 'application/json')
+      .set({'Access-Control-Allow-Origin': 'https://shoppy.gg', useCredentails: true})
+      .set('Accept', 'text/html')
       .set('user-agent', 'Shoppy')
       .then(res => console.log(res))
       .catch(err => console.log(err));
