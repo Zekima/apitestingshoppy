@@ -62,7 +62,7 @@ export default {
       .options('https://shoppy.gg/api/v1/products/')
       .set({ 'Authorization': 'miRtovzMxnHyGomQGTewS7WIxzaS3csQaTGKSh9vNRIJurFxSO'})
       .set({'Access-Control-Allow-Origin': 'https://shoppy.gg', useCredentails: true})
-      .set('Accept', 'text/html')
+      .set('Accept', 'application/json')
       .set('user-agent', 'Shoppy')
       .then(res => console.log(res))
       .catch(err => console.log(err));
