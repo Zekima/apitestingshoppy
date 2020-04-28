@@ -61,7 +61,7 @@ export default {
     this.$http
       .options('https://shoppy.gg/api/v1/products/')
       .set({ 'Authorization': 'miRtovzMxnHyGomQGTewS7WIxzaS3csQaTGKSh9vNRIJurFxSO'})
-      .set({'Access-Control-Allow-Origin': 'https://shoppy.gg', useCredentails: true})
+      .set({useCredentails: true})
       .set('Accept', 'application/json')
       .set('user-agent', 'Shoppy')
       .then(res => console.log(res))
