@@ -39,7 +39,7 @@
 
     <v-content>
 
-      <h1>test</h1>
+      <h1>testr</h1>
     
     </v-content>
   </v-app>
@@ -48,29 +48,48 @@
 <script>
 
 
-import Vue from 'vue';
+// import Vue from 'vue';
+import axios from 'axios';
 
-import VueSuperagent from 'vue-superagent'
-
-
-Vue.use(VueSuperagent) 
-
-export default {
+export default ({
   name: 'App',
-  mounted: function () {
-    this.$http
-      .options('https://shoppy.gg/api/v1/products/')
-      .set({ 'Authorization': 'miRtovzMxnHyGomQGTewS7WIxzaS3csQaTGKSh9vNRIJurFxSO'})
-      .set({useCredentails: true})
-      .set('Accept', 'application/json')
-      .set('user-agent', 'Shoppy')
-      .then(res => console.log(res))
-      .catch(err => console.log(err));
-
+  data () {
+    return {
+      info: null
+    }
   },
+  mounted () {
+    axios
+      .get('https://shoppy.gg/api/v1/products/', {headers: {'Authorization': 'miRtovzMxnHyGomQGTewS7WIxzaS3csQaTGKSh9vNRIJurFxSO', 'Access-Control-Allow-Origin': 'https://shoppy.gg', useCredentails: true, 'user-agent': 'Shoppy'}})
+      .then(res => console.log(res))
+      // .then(response => (this.info = response))
+      
+  }
+})
+
+
+
+// import VueSuperagent from 'vue-superagent'
+
+// Vue.use(VueSuperagent) 
+
+
+// export default {
+//   name: 'App',
+//   mounted: function () {
+//     this.$http
+//       .get('https://shoppy.gg/api/v1/products/')
+//       .set({ 'Authorization': 'miRtovzMxnHyGomQGTewS7WIxzaS3csQaTGKSh9vNRIJurFxSO'})
+//       .set({'Access-Control-Allow-Origin': 'https://shoppy.gg', useCredentails: true})
+//       .set('Accept', 'application/json')
+//       .set('user-agent', 'Shoppy')
+//       .then(res => console.log(res))
+//       .catch(err => console.log(err));
+
+//   },
  
-  data: () => ({
-    //
-  }),
-};
+//   data: () => ({
+//     //
+//   }),
+// };
 </script>
